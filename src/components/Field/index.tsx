@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FieldError, FieldInput, FieldLabel, FieldStyled } from "./styles";
+import { FieldInput, FieldLabel, FieldStyled } from "./styles";
 
 interface FieldProps {
   text: string;
@@ -12,7 +12,7 @@ export const Field = (props: FieldProps) => {
 
   const [value, setValue] = useState("");
 
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
   return (
     <FieldStyled className={className}>
@@ -24,7 +24,7 @@ export const Field = (props: FieldProps) => {
           setValue(e.target.value);
         }}
       />
-      {error && <FieldError>Error</FieldError>}
+      {/* {error && <FieldError>Error</FieldError>} */}
     </FieldStyled>
   );
 };
