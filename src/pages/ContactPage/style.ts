@@ -24,7 +24,7 @@ export const ContactPageForm = styled(Form)`
   grid-column: 1 / span 4;
   
   @media screen and (min-width: 1024px) {
-    grid-column: 6 / span 3;
+    grid-column: 5 / span 4;
   }
 
   @media screen and (min-width: 1440px) {

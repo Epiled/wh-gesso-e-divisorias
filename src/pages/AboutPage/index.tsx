@@ -9,28 +9,23 @@ const AboutPage = () => {
     <div>
       <SectionHeader
         title={"Quem somos"}
-        text={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        }
+        text={[
+          "Mais do que construir paredes e tetos, transformamos ambientes e realizamos sonhos com qualidade, compromisso e excelência.",
+        ]}
       />
       <SectionContent
         header={{
           title: "Nosso início",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text: [
+            "A WH Gesos e Divisórias nasceu com o propósito de entrega soluções completas em gesso e divisórias, unindo técnica, experiência e atendimento personalizado.",
+            "Ao londo dos aos, construimos uma trajetória sólida, marcada pela confiança dos nossos clientes e pelo cuidado em cada etapa do projeto.",
+            "Trabalhamos com materiais de qualidade, equipe especializada e foco em acabamentos que valorizam e transforman ambientes.",
+          ],
         }}
         image={{
           src: Background,
         }}
         orientation={"reverse"}
-      />
-      <SectionContent
-        header={{
-          title: "Nosso início",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        }}
-        image={{
-          src: Background,
-        }}
       />
       <Contact />
     </div>

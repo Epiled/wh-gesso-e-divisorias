@@ -4,7 +4,7 @@ import { SectionHeaderContainer, SectionHeaderStyled } from "./styles";
 
 export interface SectionHeaderProps {
   title: string;
-  text: string;
+  text: string[];
 }
 
 export const SectionHeader = (props: SectionHeaderProps) => {
@@ -14,7 +14,9 @@ export const SectionHeader = (props: SectionHeaderProps) => {
     <SectionHeaderStyled>
       <SectionHeaderContainer>
         <Title text={title} />
-        <Text text={text} />
+        {text.map((text, i) => {
+          return <Text key={i} text={text} />;
+        })}
       </SectionHeaderContainer>
     </SectionHeaderStyled>
   );

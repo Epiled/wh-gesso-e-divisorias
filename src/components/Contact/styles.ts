@@ -43,7 +43,7 @@ export const ContactHeader = styled(ContactContents)`
 `
 
 export const ContactFooter = styled(ContactContents)`
-  gap: 1rem;
+  gap: 2rem;
 `
 
 export const ContactSubtitle = styled(Title)`

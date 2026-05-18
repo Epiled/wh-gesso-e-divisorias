@@ -6,10 +6,10 @@ const ContactPage = () => {
   return (
     <div>
       <SectionHeader
-        title={"Contato"}
-        text={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        }
+        title={"Entre em Contato"}
+        text={[
+          "Estamos prontos para transformar seu ambiente com soluções em gesso e divisórias. fale com nossa equipe e slicite um orçamento sem compromisso.",
+        ]}
       />
 
       <ContactPageGrid>

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const AchievementsStyled = styled.div`
+export const HomeAchievements = styled.div`
   display: flex;
   justify-content: center;
   padding: 10rem;
   background: var(--lighter);
 `
 
-export const AchievementsWrapper = styled.div`
+export const HomeAchievementsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

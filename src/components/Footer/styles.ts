@@ -6,6 +6,7 @@ import { TextStyled } from "../Text/styles";
 export const FooterStyled = styled.footer`
   display: flex;
   flex-direction: column;
+  gap: 5rem;
   padding: 5rem 2rem;
   background: var(--lighter);
 
@@ -15,6 +16,10 @@ export const FooterStyled = styled.footer`
 `
 
 export const FooterLogo = styled.img`
+  display: flex;
+  align-self: center;
+  width: 21rem;
+  height: 21rem;
 `
 
 export const FooterGrid = styled.div`
@@ -105,7 +110,6 @@ export const FooterMap = styled.iframe`
 `
 
 export const FooterBottom = styled.div`
-  margin-top: 5rem;
   padding-top: 5rem;
   border-top: .1rem solid var(--color-primary);
 `
@@ -114,6 +118,8 @@ export const FooterCopyright = styled.p`
   color: var(--color-primary);
   font-size: 1.6rem;
   text-align: center;
+  font-family: var(--nunita);
+  font-weight: 500;
 
   @media screen and (min-width: 1024px) {
     font-size: 2rem;

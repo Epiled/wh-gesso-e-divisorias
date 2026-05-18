@@ -16,8 +16,8 @@ export const Contact = () => {
     <ContactStyled>
       <ContactContents>
         <ContactHeader>
-          <Title text="Lorem Impsum" />
-          <Text text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+          <Title text="Fale Conosco" />
+          <Text text="Preencha o formulário ao lado e solicte seu orçamento sem compromisso." />
         </ContactHeader>
 
         <ContactFooter>

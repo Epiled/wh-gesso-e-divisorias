@@ -25,17 +25,13 @@ export const Banner = () => {
 
           <BannerTexts>
             <BannerText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Text of the printing and.
-            </BannerText>
-            <BannerText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Projetos residenciais e corporativos com qualidade, agilidade e
+              estrutura moderna.
             </BannerText>
           </BannerTexts>
           <BannerButtons>
-            <Button appearance="brand" text="Entrar em contato!" />
-            <Button appearance="inverse" text="Whatsapp" />
+            <Button appearance="brand" text="Solicitar Orçamento" />
+            <Button appearance="inverse" text="Ver Serviços" />
           </BannerButtons>
         </BannerContent>
       </BannerWrapper>

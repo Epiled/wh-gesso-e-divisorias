@@ -64,7 +64,6 @@ export const BannerTitle = styled.h1`
   font-weight: 700;
   font-family: var(--montserrat);
   text-align: left;
-  text-transform: uppercase;
   text-rendering: geometricPrecision;
   white-space: pre-line;
 

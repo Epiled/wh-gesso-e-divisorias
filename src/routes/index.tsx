@@ -5,8 +5,12 @@ import ServicesPage from "../pages/ServicesPage";
 import ContactPage from "../pages/ContactPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import { Menu } from "../components/Menu";
-import Footer from "../components/Footer";
-import ServicePage from "../pages/ServicePage";
+import { Footer } from "../components/Footer";
+import ForrosDeGessoPage from "../pages/ServicesPage/ForrosDeGessoPage";
+import Gesso3DPage from "../pages/ServicesPage/Gesso3DPage";
+import SancaPage from "../pages/ServicesPage/SancaPage";
+import MolduraPage from "../pages/ServicesPage/MolduraPage";
+import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
 
 const Layout = () => {
   return (
@@ -39,12 +43,24 @@ const PublicRoutes = createBrowserRouter([
         children: [
           { index: true, Component: ServicesPage },
           {
-            path: "servico-01",
-            Component: ServicePage,
+            path: "forro-de-gesso",
+            Component: ForrosDeGessoPage,
           },
           {
-            path: "servico-02",
-            Component: ServicePage,
+            path: "gesso-3d",
+            Component: Gesso3DPage,
+          },
+          {
+            path: "Sanca",
+            Component: SancaPage,
+          },
+          {
+            path: "Moldura",
+            Component: MolduraPage,
+          },
+          {
+            path: "luminarias",
+            Component: LuminariasPage,
           },
         ],
       },

@@ -15,6 +15,7 @@ import {
 import { MenuIcon } from "../Icons/MenuIcon";
 import { ChevronIcon } from "../Icons/ChevronIcon";
 import { CloseIcon } from "../Icons/CloseIcon";
+import { servicesRoutes } from "../../constants/servicesRoutes";
 
 export const Menu = () => {
   const [activeMenu, setActiveMenu] = useState(false);
@@ -77,30 +78,19 @@ export const Menu = () => {
             </MenuLink>
             {activeSubmenu && (
               <MenuServices>
-                <MenuServiceLink
-                  data-state="inactive"
-                  to="/servicos/servico-01"
-                >
-                  Service 01
-                </MenuServiceLink>
-                <MenuServiceLink
-                  data-state="inactive"
-                  to="/servicos/servico-01"
-                >
-                  Service 02
-                </MenuServiceLink>
-                <MenuServiceLink
-                  data-state="inactive"
-                  to="/servicos/servico-01"
-                >
-                  Service 03
-                </MenuServiceLink>
-                <MenuServiceLink
-                  data-state="inactive"
-                  to="/servicos/servico-01"
-                >
-                  Service 04
-                </MenuServiceLink>
+                {servicesRoutes.map((service) => {
+                  const { id, text, route } = service;
+
+                  return (
+                    <MenuServiceLink
+                      key={id}
+                      data-state="inactive"
+                      to={`/servicos/${route}`}
+                    >
+                      {text}
+                    </MenuServiceLink>
+                  );
+                })}
               </MenuServices>
             )}
           </MenuLinkWrapper>

@@ -19,7 +19,7 @@ export const Form = (props: FormProps) => {
       <Field text="Menssagem:" placeholder="Menssagem..." />
 
       <FormButtons>
-        <Button appearance="inverse" text="Entrar em contato!" />
+        <Button appearance="inverse" text="Solicitar Orçamento" />
       </FormButtons>
     </FormStyled>
   );

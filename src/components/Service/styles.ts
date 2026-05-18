@@ -5,7 +5,8 @@ export const ServiceStyled = styled.div<{$image: string}>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 36rem;
+  max-width: 36rem;
+  width: 100%;
   height: 20rem;
   background-image: 
       linear-gradient(90deg, rgba(16, 42, 71, .5) 0%, rgba(25, 83, 148, .5) 100%),
@@ -15,7 +16,7 @@ export const ServiceStyled = styled.div<{$image: string}>`
   border-radius: .5rem;
 
   @media screen and (min-width: 1024px) {
-    width: 46rem;
+    max-width: 46rem;
     height: 30rem;
   }
 `

@@ -6,8 +6,9 @@ export const SectionHeaderStyled = styled.div`
   background-image: 
     linear-gradient(90deg,rgba(16, 42, 71, 1) 25%, rgba(16, 42, 71, 0.9) 60%, rgba(39, 102, 173, 0.75) 100%), 
     url(${Background});
-  background-size: contain;
+  background-size: cover;
   background-position: center right;
+  background-repeat: no-repeat;
   height: 34rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

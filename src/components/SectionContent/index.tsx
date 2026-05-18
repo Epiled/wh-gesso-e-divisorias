@@ -25,7 +25,9 @@ export const SectionContent = (props: ServicesPageProps) => {
     <SectionContentStyled>
       <SectionContentHeader $orientation={orientation}>
         <SectionContentTitle text={header.title} />
-        <SectionContentText text={header.text} />
+        {header.text.map((text, i) => {
+          return <SectionContentText key={i} text={text} />;
+        })}
       </SectionContentHeader>
       <SectionContentImage {...image} $orientation={orientation} />
     </SectionContentStyled>
