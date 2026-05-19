@@ -110,7 +110,10 @@ export const FooterMap = styled.iframe`
 `
 
 export const FooterBottom = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-top: 5rem;
+  gap: .5rem;
   border-top: .1rem solid var(--color-primary);
 `
 

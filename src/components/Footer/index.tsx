@@ -86,6 +86,7 @@ export const Footer = () => {
         <FooterCopyright>
           {"© 2026 WG Gesso e Divisoria. Todos os direitos reservados."}
         </FooterCopyright>
+        <FooterCopyright>CNPJ: 65.976.267/0001-64</FooterCopyright>
       </FooterBottom>
     </FooterStyled>
   );
