@@ -37,7 +37,7 @@ export const Infos = () => {
 
         <InfosTextBlock>
           <ClockIcon />
-          <InfosText text="Segunda a quinta: 08h às 18h" />
+          <InfosText text="Segunda a sexta: 07h às 17h" />
         </InfosTextBlock>
         <InfosTextBlock>
           <ClockIcon />

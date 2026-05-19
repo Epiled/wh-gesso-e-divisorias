@@ -24,7 +24,7 @@ export const Contact = () => {
           <ContactSubtitle text="Horário de funcionamento:" />
           <ContactTextBlock>
             <ClockIcon />
-            <Text text="Segunda a quinta: 08h às 18h" />
+            <Text text="Segunda a sexta: 07h às 17h" />
           </ContactTextBlock>
           <ContactTextBlock>
             <ClockIcon />
