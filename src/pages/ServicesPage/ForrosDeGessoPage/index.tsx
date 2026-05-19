@@ -17,7 +17,7 @@ const ForrosDeGessoPage = () => {
         header={{
           title: "O que é Forro de Gesso",
           text: [
-            "O forro de gesso é uma solução versátil e sofisticada utilizada para melhorar o acabamento de ambientes residenciais e comerciais. Além de proporcionar um visual moderno, permite integrar iluminação, esconder imperfeições e criar projetos personalizados com excelente custo-benefício.",
+            "O forro de gesso é uma solução elegante que proporciona um acabamento liso e sofisticado ao seu ambiente. Ideal para esconder imperfeições e fiações, ele permite a criação de desenhos personalizados. Com a minha equipe, você pode contar com um trabalho cuidadoso e detalhado, garantindo que cada instalação atenda às suas expectativas.",
           ],
         }}
         image={{

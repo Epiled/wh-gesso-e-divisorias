@@ -17,7 +17,7 @@ const SancaPage = () => {
         header={{
           title: "O que é Sanca",
           text: [
-            "A sanca em gesso é um acabamento aplicado entre paredes e teto que proporciona sofisticação e destaque à iluminação do ambiente. Pode ser aberta, fechada ou invertida, permitindo criar efeitos modernos e aconchegantes.",
+            "A sanca é um detalhe arquitetônico que cria uma iluminação indireta, valorizando a estética do ambiente. Disponível em diferentes estilos, ela se adapta ao seu gosto pessoal. Nossa equipe está pronta para executar a instalação com precisão, garantindo que sua sanca não apenas embeleze, mas também funcione perfeitamente em seu espaço.",
           ],
         }}
         image={{

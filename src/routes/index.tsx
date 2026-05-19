@@ -6,11 +6,7 @@ import ContactPage from "../pages/ContactPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import { Menu } from "../components/Menu";
 import { Footer } from "../components/Footer";
-import ForrosDeGessoPage from "../pages/ServicesPage/ForrosDeGessoPage";
-import Gesso3DPage from "../pages/ServicesPage/Gesso3DPage";
-import SancaPage from "../pages/ServicesPage/SancaPage";
-import MolduraPage from "../pages/ServicesPage/MolduraPage";
-import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
+import { servicesRoutes } from "../constants/servicesRoutes";
 
 const Layout = () => {
   return (
@@ -42,26 +38,14 @@ const PublicRoutes = createBrowserRouter([
         path: "servicos",
         children: [
           { index: true, Component: ServicesPage },
-          {
-            path: "forro-de-gesso",
-            Component: ForrosDeGessoPage,
-          },
-          {
-            path: "gesso-3d",
-            Component: Gesso3DPage,
-          },
-          {
-            path: "Sanca",
-            Component: SancaPage,
-          },
-          {
-            path: "Moldura",
-            Component: MolduraPage,
-          },
-          {
-            path: "luminarias",
-            Component: LuminariasPage,
-          },
+          ...servicesRoutes.map((service) => {
+            const { route, component } = service;
+
+            return {
+              path: route.replace("/", ""),
+              Component: component,
+            };
+          }),
         ],
       },
       {

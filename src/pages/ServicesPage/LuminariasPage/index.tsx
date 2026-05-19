@@ -17,7 +17,7 @@ const LuminariasPage = () => {
         header={{
           title: "O que é Luminárias",
           text: [
-            "As luminárias em gesso são estruturas planejadas para integrar iluminação de forma discreta e sofisticada ao ambiente. Elas ajudam a criar efeitos de luz modernos, valorizando a decoração e proporcionando mais conforto visual.",
+            "Nossas luminárias são projetadas para aliar funcionalidade e estilo. Com uma variedade de modelos e acabamentos, cada luminária é escolhida para complementar a decoração do seu espaço. Estou aqui com minha equipe para realizar a instalação com cuidado, assegurando que a iluminação crie uma atmosfera acolhedora e convidativa.",
           ],
         }}
         image={{
