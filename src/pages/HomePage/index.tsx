@@ -1,6 +1,7 @@
 import { Achievement } from "../../components/Achievement";
 import { Banner } from "../../components/Banner";
 import { Contact } from "../../components/Contact";
+import MultipleItems from "../../components/Slider";
 import { HomeAchievements, HomeAchievementsWrapper } from "./styles";
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
           <Achievement value={"+300"} text="clientes satifesitos" />
         </HomeAchievementsWrapper>
       </HomeAchievements>
+      <MultipleItems />
       <Contact />
     </div>
   );
