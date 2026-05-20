@@ -6,7 +6,6 @@ import {
   SectionContentStyled,
   SectionContentText,
   SectionContentTitle,
-  SectionSliderContainer,
   SectionThumb,
 } from "./styles";
 

@@ -1,4 +1,5 @@
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState } from "react";
+import { type SyntheticEvent } from "react";
 import { Button } from "../Button";
 import { Field } from "../Field";
 import { FormButtons, FormStyled } from "./styles";
@@ -35,7 +36,7 @@ export const Form = (props: FormProps) => {
     }));
   };
 
-  const handleSendEmail = async (e: FormEvent) => {
+  const handleSendEmail = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
 
@@ -54,7 +55,6 @@ export const Form = (props: FormProps) => {
 
       if (response.ok) {
         alert("E-mail enviado com sucesso!");
-        // Limpa o formulário após o envio
         setFormData({
           nome: "",
           email: "",
@@ -63,7 +63,7 @@ export const Form = (props: FormProps) => {
           mensagem: "",
         });
       } else {
-        alert(data.erro || "Ocorreu um erro ao enviar.");
+        alert(data.erro ?? "Ocorreu um erro ao enviar.");
       }
     } catch (error) {
       console.error("Erro na requisição:", error);
