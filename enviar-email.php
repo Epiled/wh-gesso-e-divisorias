@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    $para = "felipe.deam98@gmail.com"; // E-mail da Beatriz
+    $para = "whgessoedivisorias@gmail.com"; // E-mail da Beatriz
     $assunto = "Novo Orçamento [" . $servico . "] - " . $nome;
 
     // Corpo do e-mail com os novos campos formatados
