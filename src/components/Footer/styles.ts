@@ -4,8 +4,10 @@ import { Text } from "../Text"
 
 export const FooterStyled = styled.footer`
   background: #051B36;
-`
+  `
 export const FooterTop = styled.div`
+  display: flex;
+  justify-content: center;
   padding: 4rem 0;
   background: #051B36;
 `
@@ -16,10 +18,16 @@ export const FooterBottom = styled.div`
 `
 
 export const FooterWrapper = styled(Wrapper)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
+  flex: 1;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+  }
 `
 
 export const FooterColumn = styled.div`
@@ -28,14 +36,15 @@ export const FooterColumn = styled.div`
   gap: 2rem;
   max-width: 20rem;
   width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 30rem;
+  }
 `
 
 export const FooterColumnAlt = styled(FooterColumn)`
-  display: flex;
-  flex-direction: column;
   gap: 0;
   max-width: 20rem;
-  width: 100%;
 `
 
 export const FooterLogo = styled.img`
@@ -94,13 +103,9 @@ export const FooterTextAlt = styled.p`
   line-height: normal;
 `
 
-
-
 export const FooterCopy = styled(Text)`
   font-size: 1.6rem;
   font-weight: 400;
   color: white;
   text-align: center;
 `
-
-

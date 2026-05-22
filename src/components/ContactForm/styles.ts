@@ -13,15 +13,18 @@ export const ContactFormStyled = styled.div`
 
 export const ContactFormWrapper = styled(Wrapper)`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   row-gap: 3rem;
   column-gap: 6rem;
   width: 100%;
   align-items: flex-start;
+  
 
   @media screen and (min-width: 1024px){
     row-gap: 6rem;
     column-gap: 12rem;
+    flex-wrap: wrap;
+    flex-direction: row;
   };
 `
 
