@@ -1,34 +1,33 @@
-import { Contact } from "../../components/Contact";
+import { PageHeader } from "../../components/PageHeader";
 import { SectionContent } from "../../components/SectionContent";
-import { SectionHeader } from "../../components/SectionHeader";
 
-import Background from "assets/img/banner.png";
+import BackgroundImage from "assets/img/banner.png";
 
 const AboutPage = () => {
   return (
-    <div>
-      <SectionHeader
-        title={"Quem somos"}
-        text={[
-          "Mais do que construir paredes e tetos, transformamos ambientes e realizamos sonhos com qualidade, compromisso e excelência.",
-        ]}
+    <>
+      <PageHeader
+        title={"Quem Somos"}
+        text={
+          "Mais do que construir paredes e tetos, transformamos ambientes e realizamos sonhos com qualidade, compromisso e excelência."
+        }
+        background={BackgroundImage}
+        decoration="left"
       />
       <SectionContent
         header={{
-          title: "Nosso início",
-          text: [
-            "A WH Gesos e Divisórias nasceu com o propósito de entrega soluções completas em gesso e divisórias, unindo técnica, experiência e atendimento personalizado.",
-            "Ao londo dos aos, construimos uma trajetória sólida, marcada pela confiança dos nossos clientes e pelo cuidado em cada etapa do projeto.",
-            "Trabalhamos com materiais de qualidade, equipe especializada e foco em acabamentos que valorizam e transforman ambientes.",
-          ],
+          complement: "Nossa história",
+          title: "Compromisso com qualidade em cada detalhe",
+          decoration: "left",
         }}
-        image={{
-          src: Background,
-        }}
-        orientation={"reverse"}
+        texts={[
+          "A Wellignton Henrique Gesos e Divisórias é referência em soluções de gesso e divisórias, atuando com compromisso, qualidade e atenção aos detalhes.",
+          "Transformamos ambientes com soluções modernas, funcionais e  personalizadas, sempre buscando superar expecctativas.",
+        ]}
+        image={BackgroundImage}
+        qualifications={true}
       />
-      <Contact />
-    </div>
+    </>
   );
 };
 

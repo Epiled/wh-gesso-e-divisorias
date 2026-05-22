@@ -1,22 +1,19 @@
-import { Infos } from "../../components/Infos";
-import { SectionHeader } from "../../components/SectionHeader";
-import { ContactPageForm, ContactPageGrid } from "./style";
+import { PageHeader } from "../../components/PageHeader";
+
+import BackgroundImage from "assets/img/banner.png";
 
 const ContactPage = () => {
   return (
-    <div>
-      <SectionHeader
+    <>
+      <PageHeader
         title={"Entre em Contato"}
-        text={[
-          "Estamos prontos para transformar seu ambiente com soluções em gesso e divisórias. fale com nossa equipe e slicite um orçamento sem compromisso.",
-        ]}
+        text={
+          "Estamos prontos para transfirnar seu ambiente com soluções em gesso e divisórias, Fale com nossa equipe e solicite um orçamento sem compromisso."
+        }
+        background={BackgroundImage}
+        decoration="left"
       />
-
-      <ContactPageGrid>
-        <Infos />
-        <ContactPageForm />
-      </ContactPageGrid>
-    </div>
+    </>
   );
 };
 

@@ -1,92 +1,66 @@
-import "./styles";
 import {
   FooterBottom,
   FooterColumn,
+  FooterColumnAlt,
   FooterContacts,
-  FooterCopyright,
-  FooterGrid,
-  FooterLink,
+  FooterCopy,
+  FooterItem,
   FooterList,
+  FooterListAlt,
   FooterLogo,
-  FooterMap,
   FooterStyled,
   FooterText,
-  FooterTextBlock,
+  FooterTextAlt,
   FooterTitle,
+  FooterTop,
+  FooterWrapper,
 } from "./styles";
-import { EmailIcon } from "../Icons/EmailIcon";
-import { MapIcon } from "../Icons/MapIcon";
-import { PhoneIcon } from "../Icons/PhoneIcon";
-import { WhatsappIcon } from "../Icons/WhatsappIcon";
-import { servicesRoutes } from "../../constants/servicesRoutes";
 
-import LogoImage from "assets/img/logo-no-background.png";
+import Logo from "assets/img/logo-small-no-back.png";
 
 export const Footer = () => {
   return (
     <FooterStyled>
-      <FooterLogo src={LogoImage} alt="" />
-      <FooterGrid>
-        <FooterColumn>
-          <FooterTitle>Links</FooterTitle>
-          <FooterList>
-            <FooterLink to="/">Home</FooterLink>
-            <FooterLink to="/sobre">Sobre</FooterLink>
-            <FooterLink to="/servicos">Serviços</FooterLink>
-            <FooterLink to="/contato">Contato</FooterLink>
-          </FooterList>
-        </FooterColumn>
-
-        <FooterColumn>
-          <FooterTitle>Serviços</FooterTitle>
-          <FooterList>
-            {servicesRoutes.map((service) => {
-              const { id, text, route } = service;
-
-              return (
-                <FooterLink key={id} to={`/servicos/${route}`}>
-                  {text}
-                </FooterLink>
-              );
-            })}
-          </FooterList>
-        </FooterColumn>
-
-        <FooterColumn>
-          <FooterTitle>Contatos</FooterTitle>
-          <FooterContacts>
-            <FooterTextBlock>
-              <WhatsappIcon />
-              <FooterText text="(11) 9 1234-5679" />
-            </FooterTextBlock>
-            <FooterTextBlock>
-              <PhoneIcon />
-              <FooterText text="(11) 1234-5678" />
-            </FooterTextBlock>
-            <FooterTextBlock>
-              <EmailIcon />
-              <FooterText text="whgessoedivisorias@gmail.com" />
-            </FooterTextBlock>
-          </FooterContacts>
-        </FooterColumn>
-
-        <FooterColumn>
-          <FooterTitle>Localização</FooterTitle>
-          <FooterTextBlock>
-            <MapIcon />
-            <FooterText text="whgessoedivisorias@gmail.com" />
-          </FooterTextBlock>
-          <FooterMap
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29278.61044650471!2d-46.55065212262471!3d-23.466729047328005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef55c7c86048d%3A0xb46307dc4ad8b735!2sCentro%2C%20Guarulhos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1778993304952!5m2!1spt-BR!2sbr"
-            loading="lazy"
-          />
-        </FooterColumn>
-      </FooterGrid>
+      <FooterTop>
+        <FooterWrapper>
+          <FooterColumnAlt>
+            <FooterLogo src={Logo} />
+            <FooterText text="Soluções completas em gesso e divissorias para ambientes  residencias e corporativos." />
+          </FooterColumnAlt>
+          <FooterColumn>
+            <FooterTitle>Navegação</FooterTitle>
+            <FooterList>
+              <FooterItem>Home</FooterItem>
+              <FooterItem>Quem Somos</FooterItem>
+              <FooterItem>Serviços</FooterItem>
+              <FooterItem>Contato</FooterItem>
+            </FooterList>
+          </FooterColumn>
+          <FooterColumn>
+            <FooterTitle>Serviços</FooterTitle>
+            <FooterListAlt>
+              <FooterItem>Drywall</FooterItem>
+              <FooterItem>Divisória Eucatex</FooterItem>
+              <FooterItem>Forro de Gesso</FooterItem>
+              <FooterItem>Forro de PVC</FooterItem>
+              <FooterItem>Forro Modular</FooterItem>
+              <FooterItem>Sanca</FooterItem>
+            </FooterListAlt>
+          </FooterColumn>
+          <FooterColumn>
+            <FooterTitle>Contato</FooterTitle>
+            <FooterContacts>
+              <FooterTextAlt>(11) 9999-9999</FooterTextAlt>
+              <FooterTextAlt>(11) 9 9999-9999</FooterTextAlt>
+              <FooterTextAlt>whgessoedivisorias@gmail.com</FooterTextAlt>
+              <FooterTextAlt>Guarulhos - SP</FooterTextAlt>
+              <FooterTextAlt>Segunda a Sexta: 08h às 18h</FooterTextAlt>
+            </FooterContacts>
+          </FooterColumn>
+        </FooterWrapper>
+      </FooterTop>
       <FooterBottom>
-        <FooterCopyright>
-          {"© 2026 WG Gesso e Divisoria. Todos os direitos reservados."}
-        </FooterCopyright>
-        <FooterCopyright>CNPJ: 65.976.267/0001-64</FooterCopyright>
+        <FooterCopy text="© 2026 WG Gesso e Divisoria. Todos os direitos reservados. / CNPJ: 65.976.267/0001-64"></FooterCopy>
       </FooterBottom>
     </FooterStyled>
   );

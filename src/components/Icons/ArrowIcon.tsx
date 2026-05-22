@@ -1,0 +1,16 @@
+export const ArrowIcon = () => {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.8456 6L5.46718 0V5H0V7H5.46718V12L11.8456 6Z"
+        fill="#0D56B1"
+      />
+    </svg>
+  );
+};

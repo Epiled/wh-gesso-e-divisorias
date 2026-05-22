@@ -1,68 +1,77 @@
 import Image from "../assets/img/banner.png";
-import DivisoriaEucatexPage from "../pages/ServicesPage/DivisoriaEucatexPage";
-import DrywallPage from "../pages/ServicesPage/DrywallPage";
-import ForroDePVCPage from "../pages/ServicesPage/ForroDePVCPage";
-import ForroModularPage from "../pages/ServicesPage/ForroModularPage";
-import ForrosDeGessoPage from "../pages/ServicesPage/ForrosDeGessoPage";
-import ForrovidPage from "../pages/ServicesPage/ForrovidPage";
-import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
-import SancaPage from "../pages/ServicesPage/SancaPage";
+import type { ServiceProp } from "../components/Service";
+// import DivisoriaEucatexPage from "../pages/ServicesPage/DivisoriaEucatexPage";
+// import DrywallPage from "../pages/ServicesPage/DrywallPage";
+// import ForroDePVCPage from "../pages/ServicesPage/ForroDePVCPage";
+// import ForroModularPage from "../pages/ServicesPage/ForroModularPage";
+// import ForrosDeGessoPage from "../pages/ServicesPage/ForrosDeGessoPage";
+// import ForrovidPage from "../pages/ServicesPage/ForrovidPage";
+// import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
+// import SancaPage from "../pages/ServicesPage/SancaPage";
+interface ServiceRoute {
+  id: string;
+  // component: React.ComponentType;
+}
 
-export const servicesRoutes = [
+const services: (ServiceRoute & ServiceProp)[] = [
   {
     id: "forro-de-gesso",
-    text: "Forro de Gesso",
+    title: "Forro de Gesso",
+    text: "Acabamentos modernos em gesso que valorizam o ambiente com elegância e sofisticação.",
     image: Image,
-    route: "/forro-de-gesso",
-    component: ForrosDeGessoPage,
+    link: "/forro-de-gesso",
   },
   {
     id: "sanca",
-    text: "Sanca",
+    title: "Sanca",
+    text: "Projetos de sancas abertas, fechadas e iluminadas para ambientes mais modernos.",
     image: Image,
-    route: "/sanca",
-    component: SancaPage,
+    link: "/sanca",
   },
   {
     id: "luminarias",
-    text: "Luminárias",
+    title: "Luminárias",
+    text: "Estruturas em gesso para iluminação embutida com design moderno e funcional.",
     image: Image,
-    route: "/luminarias",
-    component: LuminariasPage,
+    link: "/luminarias",
   },
   {
     id: "divisoriaEucatex",
-    text: "Divisória Eucatex",
+    title: "Divisória Eucatex",
+    text: "Divisórias práticas e resistentes para organização de ambientes corporativos.",
     image: Image,
-    route: "/divisoriaEucatex",
-    component: DivisoriaEucatexPage,
+    link: "/divisoriaEucatex",
   },
   {
     id: "forrovid",
-    text: "Forrovid",
+    title: "Forrovid",
+    text: "Forros removíveis ideais para ambientes comerciais que exigem praticidade.",
     image: Image,
-    route: "/forrovid",
-    component: ForrovidPage,
+    link: "/forrovid",
   },
   {
     id: "forroDePVC",
-    text: "Forro De PVC",
+    title: "Forro De PVC",
+    text: "Soluções em PVC resistentes, econômicas e fáceis de manter no dia a dia.",
     image: Image,
-    route: "/forroDePVC",
-    component: ForroDePVCPage,
+    link: "/forroDePVC",
   },
   {
     id: "forroModular",
-    text: "Forro Modular",
+    title: "Forro Modular",
+    text: "Forros modulares com instalação prática e acabamento profissional.",
     image: Image,
-    route: "/forroModular",
-    component: ForroModularPage,
+    link: "/forroModular",
   },
   {
     id: "drywall",
-    text: "Drywall",
+    title: "Drywall",
+    text: "Paredes e estruturas em drywall com rapidez, leveza e excelente acabamento.",
     image: Image,
-    route: "/drywall",
-    component: DrywallPage,
+    link: "/drywall",
   },
 ];
+
+export const servicesRoutes = services.toSorted((a, b) => {
+  return a.title.localeCompare(b.title);
+});

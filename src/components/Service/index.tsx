@@ -1,19 +1,32 @@
-import { ServiceStyled, ServiceText } from "./styles";
+import { ArrowIcon } from "../Icons/ArrowIcon";
+import {
+  ServiceContent,
+  ServiceImage,
+  ServiceLink,
+  ServiceStyled,
+  ServiceText,
+  ServiceTitle,
+} from "./styles";
 
-interface IService {
+export interface ServiceProp {
+  title: string;
   text: string;
   image: string;
-  route: string;
+  link: string;
 }
 
-export const Service = (props: IService) => {
-  const { text, image, route } = props;
-
-  console.log(route);
-
+export const Service = (props: ServiceProp) => {
+  const { title, text, image, link } = props;
   return (
-    <ServiceStyled $image={image}>
-      <ServiceText>{text}</ServiceText>
+    <ServiceStyled>
+      <ServiceImage src={image} alt="" />
+      <ServiceContent>
+        <ServiceTitle>{title}</ServiceTitle>
+        <ServiceText>{text} </ServiceText>
+        <ServiceLink href={link}>
+          Saiba mais <ArrowIcon />
+        </ServiceLink>
+      </ServiceContent>
     </ServiceStyled>
   );
 };

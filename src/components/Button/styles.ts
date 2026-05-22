@@ -1,75 +1,54 @@
-import styled, { css } from "styled-components";
-import type { Appearance, Size } from ".";
+import styled from "styled-components";
+import type { Appearance } from ".";
 
-export const ButtonStyled = styled.button<{ 
-    $appearance?: Appearance, 
-    $size?: Size 
-  }>`
+export const ButtonStyled = styled.button<{$appearance?: Appearance}>`
   display: flex;
-  gap: .8rem;
-  justify-content: center;
-  border-radius: .5rem;
   border: 0;
   outline: 0;
-  font-weight: 500;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  border-radius: .5rem;
   font-family: var(--montserrat);
-  width: 100%;
-  max-width: 25rem;
-  transition-property: background-color, color, box-shadow;
-  transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
 
   &:hover {
-    box-shadow: 0 .8rem 1.5rem var(--color-shadow);
     cursor: pointer;
   }
 
   ${({ $appearance }) => {
-    switch($appearance) {
-      case 'inverse':
-        return css`
-          background: var(--color-intermediary);
-          color: var(--color-neutral-white);
+    let css: string;
+    
+    if ($appearance === "neutral") {
+        css = `
+          background: white;
+          border: .1rem solid #0D56B1;
+          color: #0D56B1;
+        `;
+    } else if ($appearance === "outline") {
+        css = `
+          color: white;
+          border: .1rem solid white;
+          background: transparent;
+          font-weight: 400;
+        `;
+    } else if ($appearance === "outline-brand") {
+        css = `
+          color: #0D56B1;
+          border: .1rem solid #0D56B1;
+          background: transparent;
+        `;
+    } else {
+        css = `
+          background: #0D56B1;
+          color: white;
+        `;
+    }
 
-          &:hover {
-            background: var(--color-intermediary-hover);
-          }
-        `;
-      case 'brand':
-        return css`
-          background: var(--color-primary);
-          color: var(--color-neutral-white);
-
-          &:hover {
-            background: var(--color-primary-hover);
-          }
-        `;
-      case 'default':
-      default:
-        return css`
-          background: var(--color-neutral-white);
-          color: var(--color-text-primary);
-
-          &:hover {
-            color: var(--color-brand-primary);
-          }
-        `;
-      }
-  }}
-
-  ${({ $size }) => {
-    switch($size) {
-      case 'small':
-        return css`
-          font-size: 1.4rem;
-          padding: 0.7rem 1.6rem;
-        `;
-      case 'large':
-      default:
-        return css`
-          font-size: 1.8rem;
-          padding: 1.5rem;
-        `;
-      }
+    return `
+        ${css}
+    `;
   }}
 `

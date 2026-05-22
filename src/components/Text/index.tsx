@@ -1,12 +1,18 @@
+import type { DecorationAlign } from "../../types/DecorationAlign";
 import { TextStyled } from "./styles";
 
-interface IText {
+interface TextProps {
   text: string;
+  align?: DecorationAlign;
   className?: string;
 }
 
-export const Text = (props: IText) => {
-  const { text, className } = props;
+export const Text = (props: TextProps) => {
+  const { text, align, className } = props;
 
-  return <TextStyled className={className}>{text}</TextStyled>;
+  return (
+    <TextStyled $align={align} className={className}>
+      {text}
+    </TextStyled>
+  );
 };

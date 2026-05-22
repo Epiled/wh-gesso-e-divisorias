@@ -1,36 +1,29 @@
 import React from "react";
 import { ButtonStyled } from "./styles";
 
-export type Appearance = "default" | "inverse" | "brand";
-export type Size = "small" | "large";
+export type Appearance = "default" | "outline" | "outline-brand" | "neutral";
 
-interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  appearance: Appearance;
   text?: string;
-  appearance?: Appearance;
-  size?: Size;
   className?: string;
+  children?: React.ReactElement;
+  onClick: () => void;
 }
 
-export const Button = (props: IButton) => {
-  const {
-    icon,
-    text,
-    appearance = "default",
-    size = "large",
-    className,
-    children,
-    ...rest
-  } = props;
+export const Button = (props: ButtonProps) => {
+  const { appearance, text, className, children, onClick, ...rest } = props;
+  const baseClass = className ?? "";
+
   return (
     <ButtonStyled
       $appearance={appearance}
-      $size={size}
-      className={className}
+      className={baseClass}
+      onClick={onClick}
       {...rest}
     >
-      {icon && icon}
-      {text ?? children}
+      {children && children}
+      {text && text}
     </ButtonStyled>
   );
 };

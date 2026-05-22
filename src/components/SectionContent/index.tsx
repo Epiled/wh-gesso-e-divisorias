@@ -1,35 +1,99 @@
+import type { Direction } from "../../types/Direction";
+import { type ButtonProps } from "../Button";
+import { Text } from "../Text";
+import { Title, type TitleProps } from "../Title";
 import {
-  SectionContentHeader,
+  Qualification,
+  Qualifications,
+  QualificationText,
+  QualificationTitle,
+  SectionContentButton,
+  SectionContentButtons,
+  SectionContentDivide,
+  SectionContentFrame,
   SectionContentImage,
+  SectionContentMain,
   SectionContentStyled,
-  SectionContentText,
-  SectionContentTitle,
+  SectionContentTexts,
+  SectionContentWrapper,
 } from "./styles";
-import { type SectionHeaderProps } from "../SectionHeader";
 
-interface ServicesPageProps {
-  header: SectionHeaderProps;
-  image: ImageProps;
-  orientation?: "default" | "reverse";
+export interface SectionContentProps {
+  header: TitleProps;
+  texts: string[];
+  image?: string;
+  direction?: Direction;
+  buttons?: ButtonProps[];
+  qualifications?: boolean;
 }
 
-interface ImageProps {
-  src: string;
-  alt?: string;
-}
-
-export const SectionContent = (props: ServicesPageProps) => {
-  const { header, image, orientation = "default" } = props;
+export const SectionContent = (props: SectionContentProps) => {
+  const {
+    header,
+    texts,
+    image,
+    direction,
+    buttons,
+    qualifications = false,
+  } = props;
 
   return (
-    <SectionContentStyled>
-      <SectionContentHeader $orientation={orientation}>
-        <SectionContentTitle text={header.title} />
-        {header.text.map((text, i) => {
-          return <SectionContentText key={i} text={text} />;
-        })}
-      </SectionContentHeader>
-      <SectionContentImage {...image} $orientation={orientation} />
+    <SectionContentStyled $direction={direction}>
+      <SectionContentWrapper $direction={direction}>
+        <SectionContentMain>
+          <SectionContentDivide $decoration={header.decoration}>
+            <Title {...header} />
+
+            <SectionContentTexts>
+              {texts.map((text) => {
+                return <Text key={text} text={text} />;
+              })}
+            </SectionContentTexts>
+          </SectionContentDivide>
+
+          {qualifications && (
+            <Qualifications>
+              <Qualification>
+                <QualificationTitle>+8</QualificationTitle>
+                <QualificationText>Anos de Experiência</QualificationText>
+              </Qualification>
+
+              <Qualification>
+                <QualificationTitle>500+</QualificationTitle>
+                <QualificationText>Projetos Concluidos</QualificationText>
+              </Qualification>
+
+              <Qualification>
+                <QualificationTitle>100%</QualificationTitle>
+                <QualificationText>Compromisso</QualificationText>
+              </Qualification>
+            </Qualifications>
+          )}
+
+          {buttons && (
+            <SectionContentButtons>
+              {buttons.map((button) => {
+                const { text, appearance, onClick } = button;
+
+                return (
+                  <SectionContentButton
+                    key={text}
+                    text={text}
+                    appearance={appearance}
+                    onClick={onClick}
+                  />
+                );
+              })}
+            </SectionContentButtons>
+          )}
+        </SectionContentMain>
+
+        {image && (
+          <SectionContentFrame>
+            <SectionContentImage src={image} />
+          </SectionContentFrame>
+        )}
+      </SectionContentWrapper>
     </SectionContentStyled>
   );
 };

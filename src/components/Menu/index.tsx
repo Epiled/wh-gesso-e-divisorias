@@ -1,125 +1,51 @@
-import { useEffect, useState } from "react";
-import { Logo } from "../Logo";
+import { useNavigate } from "react-router";
+import { WhatsAppIcon } from "../Icons/WhatsAppIcon";
 import {
-  MenuButtonToggle,
-  MenuLink,
-  MenuLinkWrapper,
+  MenuButton,
+  MenuButtons,
+  MenuButtonWhatsApp,
+  MenuContent,
+  MenuItem,
   MenuList,
-  MenuListInner,
   MenuLogo,
-  MenuOverlay,
-  MenuServiceLink,
-  MenuServices,
   MenuStyled,
+  MenuWrapper,
 } from "./styles";
-import { MenuIcon } from "../Icons/MenuIcon";
-import { ChevronIcon } from "../Icons/ChevronIcon";
-import { CloseIcon } from "../Icons/CloseIcon";
-import { servicesRoutes } from "../../constants/servicesRoutes";
+
+import LogoImage from "assets/img/logo-small-no-back.png";
 
 export const Menu = () => {
-  const [activeMenu, setActiveMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-  const [activeSubmenu, setActiveSubmenu] = useState(false);
-
-  const toggleMenu = () => {
-    setActiveMenu((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const width = entry.contentRect.width;
-        const mobileStatus = width <= 1024;
-        setIsMobile(mobileStatus);
-
-        if (!mobileStatus) {
-          setActiveMenu(false);
-        }
-      }
-    });
-
-    resizeObserver.observe(document.body);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
+  const navigate = useNavigate();
 
   return (
     <MenuStyled>
-      {activeMenu && isMobile && <MenuOverlay onClick={toggleMenu} />}
-      <MenuLogo to="/">
-        <Logo />
-      </MenuLogo>
+      <MenuWrapper>
+        <MenuLogo src={LogoImage} />
 
-      <MenuList $active={activeMenu}>
-        <MenuListInner>
-          <MenuLink data-state="active" to="/">
-            Home
-          </MenuLink>
-          <MenuLink data-state="inactive" to="/sobre">
-            Quem Somos
-          </MenuLink>
-          <MenuLinkWrapper
-            onMouseEnter={() => {
-              setActiveSubmenu(true);
-            }}
-            onMouseLeave={() => {
-              setActiveSubmenu(false);
-            }}
-          >
-            <MenuLink data-state="inactive" to="/servicos">
-              Serviços
-              <ChevronIcon
-                $rotate={activeSubmenu ? 180 : 0}
-                aria-hidden="true"
-              />
-            </MenuLink>
-            {activeSubmenu && (
-              <MenuServices>
-                {servicesRoutes.map((service) => {
-                  const { id, text, route } = service;
+        <MenuContent>
+          <MenuList>
+            <MenuItem data-state="active" to={"/"}>
+              Home
+            </MenuItem>
+            <MenuItem to={"/quem-somos"}>Quem Somos</MenuItem>
+            <MenuItem to={"/servicos"}>Serviços</MenuItem>
+            <MenuItem to={"/contato"}>Contato</MenuItem>
+          </MenuList>
 
-                  return (
-                    <MenuServiceLink
-                      key={id}
-                      data-state="inactive"
-                      to={`/servicos/${route}`}
-                    >
-                      {text}
-                    </MenuServiceLink>
-                  );
-                })}
-              </MenuServices>
-            )}
-          </MenuLinkWrapper>
-          <MenuLink data-state="inactive" to="/contato">
-            Contato
-          </MenuLink>
-        </MenuListInner>
-      </MenuList>
-
-      <MenuButtonToggle
-        icon={
-          activeMenu ? (
-            <CloseIcon
-              $size="4rem"
-              $color="var(--color-primary)"
-              aria-hidden="true"
+          <MenuButtons>
+            <MenuButton
+              appearance={"default"}
+              text="Solicitar Orçamento"
+              onClick={() => {
+                void navigate("/contato");
+              }}
             />
-          ) : (
-            <MenuIcon
-              $size="4rem"
-              $color="var(--color-primary)"
-              aria-hidden="true"
-            />
-          )
-        }
-        aria-label={"Abrir menu de navegação"}
-        size="small"
-        onClick={toggleMenu}
-      />
+            <MenuButtonWhatsApp appearance="default" onClick={() => {}}>
+              <WhatsAppIcon />
+            </MenuButtonWhatsApp>
+          </MenuButtons>
+        </MenuContent>
+      </MenuWrapper>
     </MenuStyled>
   );
 };

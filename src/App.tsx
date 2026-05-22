@@ -1,14 +1,15 @@
 import { RouterProvider } from "react-router";
 import PublicRoutes from "./routes";
 import GlobalStyles from "./styles/GlobalStyles";
-import { WhatsappContact } from "./components/WhatsAppContact";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <RouterProvider router={PublicRoutes} />
-      <WhatsappContact />
     </>
   );
 }

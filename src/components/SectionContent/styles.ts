@@ -1,63 +1,102 @@
-import styled from "styled-components";
-import { Title } from "../Title";
-import { Text } from "../Text";
+import styled from 'styled-components';
+import { Wrapper } from '../Wrapper';
+import type { DecorationAlign } from '../../types/DecorationAlign';
+import type { Direction } from '../../types/Direction';
+import { Button } from '../Button';
 
-export const SectionContentStyled = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 5rem 2rem;
-  gap: 2rem;
-  background: var(--lighter);
-  
-  @media screen and (min-width: 1024px) {
-    padding: 5rem 4rem;
-    grid-template-columns: repeat(8, 1fr);
-  }
-
-  @media screen and (min-width: 1440px) {
-    grid-template-columns: repeat(12, 1fr);
-  }
+export const SectionContentStyled = styled.section<{ $direction?: Direction }>`
+  padding: 7rem 0;
+  display: flex;
+  justify-content: center;
+  background: ${({ $direction }) => { return $direction === "reverse" ? "#F4F6F8" : "white"}};
 `
 
-export const SectionContentHeader = styled.div<{$orientation?: "default" | "reverse"}>`
+export const SectionContentWrapper = styled(Wrapper)<{ $direction?: Direction }>`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  grid-column: 1 / span 4;
+  gap: 4rem;
 
   @media screen and (min-width: 1024px) {
-    grid-row: 1;
-    grid-column: ${({ $orientation }) => $orientation === 'reverse' ? '5 / span 4' : '1 / span 4'};
-  }
-
-  @media screen and (min-width: 1440px) {
-    grid-column: ${({ $orientation }) => $orientation === 'reverse' ? '7 / span 6' : '1 / span 6'};
+    flex-direction: row;
+    width: 100%;
+    
+    justify-content: ${({ $direction }) => { return $direction === "reverse" ? "flex-end" : "flex-start"}};
+    flex-direction: ${({ $direction }) => { return $direction === "reverse" ? "row-reverse" : "row"}};
   }
 `
 
-export const SectionContentImage = styled.img<{$orientation?: "default" | "reverse"}>`
+export const SectionContentMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex: 1;
+`
+
+export const SectionContentDivide = styled.div<{ $decoration?: DecorationAlign }>`
+  display: flex;
+  flex-direction: column;
+  max-width: 68rem;
+  gap: ${({ $decoration }) => ($decoration ? "6rem" : "1.5rem")};
+
+  @media screen and (min-width: 1024px){
+    flex: 1;
+  }
+`
+
+export const SectionContentTexts = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`
+
+export const SectionContentButtons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+`
+
+export const SectionContentFrame = styled.div`
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 80rem;
+
+  @media screen and (min-width: 1024px){
+    flex: 1;
+    height: 100%;
+  }
+`
+
+export const SectionContentImage = styled.img`
   width: 100%;
-  grid-column: 1 / span 4;
-  border-radius: .5rem;
-  border: .1rem solid var(--color-primary);
-
-  @media screen and (min-width: 1024px) {
-    grid-row: 1;
-    grid-column: ${({ $orientation }) => $orientation === 'reverse' ? '1 / span 4' : '5 / span 4'};
-  }
-
-  @media screen and (min-width: 1440px) {
-    grid-column: ${({ $orientation }) => $orientation === 'reverse' ? '1 / span 6' : '7 / span 6'};
-  }
+  height: 100%;
+  object-fit: cover;
 `
 
-export const SectionContentTitle = styled(Title)`
-  color: var(--color-primary);
-  @media screen and (min-width: 1024px) {
-    font-size: 4.8rem;
-  }
+export const SectionContentButton = styled(Button)`
+  font-size: 1.8rem;
+  padding: 1.5rem 3rem;
 `
 
-export const SectionContentText = styled(Text)`
-  color: var(--color-text-primary);
+export const Qualifications = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+`
+
+export const Qualification = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const QualificationTitle = styled.div`
+  font-size: 3.6rem;
+  font-family: var(--nunita);
+  font-weight: 900;
+  color: #0D56B1;
+`
+
+export const QualificationText = styled.div`
+  font-size: 2rem;
+  font-family: var(--nunita);
+  color: #202020;
 `

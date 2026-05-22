@@ -1,28 +1,29 @@
-import { ServicesContainer } from "./styles";
+import { PageHeader } from "../../components/PageHeader";
 
-import { Contact } from "../../components/Contact";
-import { SectionHeader } from "../../components/SectionHeader";
-import { Service } from "../../components/Service";
-
+import BackgroundImage from "assets/img/banner.png";
+import { ServicesBlock } from "../../components/ServicesBlock";
 import { servicesRoutes } from "../../constants/servicesRoutes";
 
 const ServicesPage = () => {
   return (
-    <div>
-      <SectionHeader
+    <>
+      <PageHeader
         title={"Nossos Serviços"}
-        text={[
-          "Soluções comppletas em gesso e divisórias para transformar ambientes com qualidade, funcionalidade e acabamento impecável.",
-        ]}
+        text={
+          "Soluções completas em gesso e divisórias para transformar ambientes com qualidade, funcionalidade e acabamento impecável."
+        }
+        background={BackgroundImage}
+        decoration="left"
       />
-      <ServicesContainer>
-        {servicesRoutes.map((service) => {
-          const { id, text, image, route } = service;
-          return <Service key={id} text={text} image={image} route={route} />;
-        })}
-      </ServicesContainer>
-      <Contact />
-    </div>
+
+      <ServicesBlock
+        title="Todos os Serviços"
+        texts={[
+          "Soluções completas em gesso e divisórias para todos os tipos de ambientes.",
+        ]}
+        list={servicesRoutes}
+      />
+    </>
   );
 };
 

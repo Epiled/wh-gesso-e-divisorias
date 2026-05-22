@@ -1,20 +1,20 @@
 import { createBrowserRouter, Outlet } from "react-router";
+import { Menu } from "../components/Menu";
+import { CallToAction } from "../components/CallToAction";
+import { Footer } from "../components/Footer";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
-import ServicesPage from "../pages/ServicesPage";
 import ContactPage from "../pages/ContactPage";
-import NotFoundPage from "../pages/NotFoundPage";
-import { Menu } from "../components/Menu";
-import { Footer } from "../components/Footer";
-import { servicesRoutes } from "../constants/servicesRoutes";
+import ServicesPage from "../pages/ServicesPage";
 
 const Layout = () => {
   return (
     <>
       <Menu />
-      <main style={{ paddingTop: "9rem" }}>
+      <main>
         <Outlet />
       </main>
+      <CallToAction />
       <Footer />
     </>
   );
@@ -31,30 +31,16 @@ const PublicRoutes = createBrowserRouter([
         Component: HomePage,
       },
       {
-        path: "sobre",
+        path: "quem-somos",
         Component: AboutPage,
       },
       {
         path: "servicos",
-        children: [
-          { index: true, Component: ServicesPage },
-          ...servicesRoutes.map((service) => {
-            const { route, component } = service;
-
-            return {
-              path: route.replace("/", ""),
-              Component: component,
-            };
-          }),
-        ],
+        Component: ServicesPage,
       },
       {
         path: "contato",
         Component: ContactPage,
-      },
-      {
-        path: "*",
-        Component: NotFoundPage,
       },
     ],
   },

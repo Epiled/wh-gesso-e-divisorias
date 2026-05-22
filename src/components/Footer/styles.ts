@@ -1,130 +1,106 @@
-import styled from "styled-components";
-import { NavLink } from "react-router";
-import { Text } from "../Text";
-import { TextStyled } from "../Text/styles";
+import styled from "styled-components"
+import { Wrapper } from "../Wrapper"
+import { Text } from "../Text"
 
 export const FooterStyled = styled.footer`
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 5rem 2rem;
-  background: var(--lighter);
-
-  @media screen and (min-width: 1024px) {
-    padding: 5rem 4rem;
-  }
+  background: #051B36;
+`
+export const FooterTop = styled.div`
+  padding: 4rem 0;
+  background: #051B36;
 `
 
-export const FooterLogo = styled.img`
-  display: flex;
-  align-self: center;
-  width: 21rem;
-  height: 21rem;
+export const FooterBottom = styled.div`
+  padding: 2rem 0;
+  background: #03152B;
 `
 
-export const FooterGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 1rem;
-  row-gap: 5rem;
-
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 2rem;
-  }
-
-  @media screen and (min-width: 1440px) {
-    grid-template-columns: repeat(12, 1fr);
-  }
+export const FooterWrapper = styled(Wrapper)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
 `
 
 export const FooterColumn = styled.div`
-  grid-column: 1 / span 4;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 20rem;
+  width: 100%;
+`
 
-  &:where(:nth-child(1)) {
-    grid-column: 1 / span 2;
-  }
+export const FooterColumnAlt = styled(FooterColumn)`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 20rem;
+  width: 100%;
+`
 
-  &:where(:nth-child(2)) {
-    grid-column: 3 / span 2;
-  }
-
-  @media screen and (min-width: 1024px) {
-    &:where(:nth-child(3)) {
-      grid-column: 5 / span 4;
-    }
-
-    &:where(:nth-child(4)) {
-      grid-column: 5 / span 4;
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    &:where(:nth-child(4)) {
-      grid-column: 9 / span 4;
-    }
-  }
+export const FooterLogo = styled.img`
 `
 
 export const FooterTitle = styled.h3`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   font-family: var(--montserrat);
-  color: var(--color-intermediary);
-`
-
-export const FooterText = styled(Text)`
-  color: var(--color-text-primary);
 `
 
 export const FooterList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem;
 `
 
-export const FooterLink = styled(TextStyled).attrs({ as: NavLink })`
-  color: var(--color-text-primary);
-  text-decoration: none;
+export const FooterListAlt = styled.ul`
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  gap: .5rem 5rem; 
+  justify-content: start;
+`
+
+export const FooterListServices = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+`
+
+export const FooterItem = styled.li`
+  width: 100%;
+  font-size: 1.4rem;
+  font-family: var(--nunita);
 `
 
 export const FooterContacts = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem 1.5rem;
 `
 
-export const FooterTextBlock = styled.div`
-  display: flex;
-  gap: 1rem;
-  color: var(--color-intermediary);
-`
-
-export const FooterMap = styled.iframe`
-  width: 100%;
-  height: 25rem;
-  border-radius: .5rem;
-  border: .1rem solid var(--color-primary-dark);
-`
-
-export const FooterBottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-top: 5rem;
-  gap: .5rem;
-  border-top: .1rem solid var(--color-primary);
-`
-
-export const FooterCopyright = styled.p`
-  color: var(--color-primary);
+export const FooterText = styled(Text)`
   font-size: 1.6rem;
-  text-align: center;
-  font-family: var(--nunita);
-  font-weight: 500;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 2rem;
-  }
+  font-weight: 400;
+  color: white;
+  line-height: normal;
 `
+
+export const FooterTextAlt = styled.p`
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: var(--nunita);
+  color: white;
+  line-height: normal;
+`
+
+
+
+export const FooterCopy = styled(Text)`
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+`
+
+

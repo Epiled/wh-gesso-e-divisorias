@@ -1,13 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import type { DecorationAlign } from '../../types/DecorationAlign';
 
-export const TextStyled = styled.p`
-  color: var(--color-neutral-white);
-  font-size: 1.8rem;
-  font-family: var(--nunita);
+export const TextStyled = styled.p<{ $align?: DecorationAlign }>`
+  color: #202020;
   font-weight: 500;
-  text-align: left;
-
-  @media screen and (min-width: 1024px) {
-    font-size: 2rem;
-  }
+  font-size: 2rem;
+  font-family: var(--nunita);
+  line-height: 3rem;
+  text-align: ${({ $align }) => $align ?? "left"};
 `
