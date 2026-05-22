@@ -1,9 +1,6 @@
 import { ChockIcon } from "../Icons/ChockIcon";
 import { Input } from "../Input";
-import {
-  SectionContentDivide,
-  SectionContentTexts,
-} from "../SectionContent/styles";
+import { SectionContentTexts } from "../SectionContent/styles";
 import { Text } from "../Text";
 import { Title } from "../Title";
 import {
