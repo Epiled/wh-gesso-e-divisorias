@@ -63,6 +63,8 @@ export const MapText = styled(Text)`
 export const MapButton = styled(Button)`
   @media screen and (min-width: 1400px) {
     font-size: 1.4rem;
+    padding: 1rem 4.5rem;
+    align-items: flex-start;
   }
 `
 

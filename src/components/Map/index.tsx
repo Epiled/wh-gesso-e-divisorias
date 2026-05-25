@@ -1,4 +1,3 @@
-import { Button } from "../Button";
 import {
   MapBox,
   MapButton,
@@ -27,7 +26,11 @@ export const Map = () => {
             appearance={"outline-brand"}
             text="Ver no Google Maps"
             onClick={() => {
-              return "";
+              window.open(
+                "https://www.google.com/maps?ll=-23.462951,-46.530396&z=13&t=m&hl=pt-BR&gl=BR&mapclient=embed&q=Centro+Guarulhos+-+SP",
+                "_blank",
+                "noopener,noreferrer",
+              );
             }}
           />
         </MapBox>
