@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Wrapper } from "../Wrapper"
 import { Text } from "../Text"
+import { NavLink } from "react-router"
 
 export const FooterStyled = styled.footer`
   background: #051B36;
@@ -23,24 +24,27 @@ export const FooterWrapper = styled(Wrapper)`
   gap: 3rem;
   flex: 1;
 
+  container-type: inline-size;
+  container-name: footer;
+
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
-    gap: 5rem;
   }
-`
+`;
 
 export const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 20rem;
-  width: 100%;
 
-  @media screen and (min-width: 1024px) {
-    max-width: 30rem;
+  width: auto;
+  max-width: 30rem;
+
+  @container footer (min-width: 1400px) {
+    flex: 1;
   }
-`
+`;
 
 export const FooterColumnAlt = styled(FooterColumn)`
   gap: 0;
@@ -76,10 +80,15 @@ export const FooterListServices = styled.ul`
   gap: .5rem;
 `
 
-export const FooterItem = styled.li`
+export const FooterItem = styled.li.attrs({ as: NavLink})`
   width: 100%;
   font-size: 1.4rem;
   font-family: var(--nunita);
+  text-decoration: none;
+
+  &:visited {
+    color: white;
+  }
 `
 
 export const FooterContacts = styled.div`

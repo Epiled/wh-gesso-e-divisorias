@@ -13,9 +13,11 @@ export const ButtonStyled = styled.button<{$appearance?: Appearance}>`
   font-weight: 600;
   text-align: center;
   justify-content: center;
+  transition: all .5s;
 
   &:hover {
     cursor: pointer;
+    transition: all .5s;
   }
 
   ${({ $appearance }) => {
@@ -26,6 +28,12 @@ export const ButtonStyled = styled.button<{$appearance?: Appearance}>`
           background: white;
           border: .1rem solid #0D56B1;
           color: #0D56B1;
+
+          &:hover {
+            color: white;
+            border: .1rem solid white;
+            background: transparent;
+          }
         `;
     } else if ($appearance === "outline") {
         css = `
@@ -33,17 +41,32 @@ export const ButtonStyled = styled.button<{$appearance?: Appearance}>`
           border: .1rem solid white;
           background: transparent;
           font-weight: 400;
+
+          &:hover {
+            color: #0D56B1;
+            background: white;
+          }
         `;
     } else if ($appearance === "outline-brand") {
         css = `
           color: #0D56B1;
           border: .1rem solid #0D56B1;
           background: transparent;
+
+          &:hover {
+            color: white;
+            border: .1rem solid white;
+            background: #0D56B1;
+          }
         `;
     } else {
         css = `
           background: #0D56B1;
           color: white;
+
+          &:hover {
+            background: #053269;
+          }
         `;
     }
 

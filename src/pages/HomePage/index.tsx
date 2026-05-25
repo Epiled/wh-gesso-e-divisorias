@@ -55,8 +55,8 @@ const HomePage = () => {
           decoration: "left",
         }}
         texts={[
-          "A Wellignton Henrique Gesos e Divisórias é referência em soluções de gesso e divisórias, atuando com compromisso, qualidade e  atenção aos detalhes.",
-          "Transformamos ambientes com soluções modernas, funcionais e  personalizadas, sempre buscando superar expecctativas.",
+          "A Wellignton Henrique Gessos e Divisórias é referência em soluções de gesso e divisórias, atuando com compromisso, qualidade e  atenção aos detalhes.",
+          "Transformamos ambientes com soluções modernas, funcionais e  personalizadas, sempre buscando superar expectativas.",
         ]}
         image={BackgroundImage}
         qualifications={true}
@@ -64,7 +64,7 @@ const HomePage = () => {
         buttons={[
           {
             appearance: "default",
-            text: "Conehça Nossa História",
+            text: "Conheça Nossa História",
             onClick: () => {
               void navigate("/quem-somos");
             },
@@ -76,7 +76,7 @@ const HomePage = () => {
         header={{
           title: "Nossos Projetos",
         }}
-        texts={["Confira alguns dos nosos trabalhos e inspire-se."]}
+        texts={["Confira alguns dos nossos trabalhos e inspire-se."]}
         children={<SliderAuto />}
       />
 

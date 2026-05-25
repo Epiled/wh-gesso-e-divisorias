@@ -1,22 +1,37 @@
-import { createBrowserRouter, Outlet } from "react-router";
+import {
+  createBrowserRouter,
+  Outlet,
+  ScrollRestoration,
+  useLocation,
+} from "react-router";
+
 import { Menu } from "../components/Menu";
 import { CallToAction } from "../components/CallToAction";
 import { Footer } from "../components/Footer";
+
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import ServicesPage from "../pages/ServicesPage";
 
+import { servicesRoutes } from "../constants/servicesRoutes";
+import { LayoutContainer, LayoutMain } from "./styles";
+
 const Layout = () => {
+  const location = useLocation();
+
+  const isContactPage = location.pathname === "/contato";
+
   return (
-    <>
+    <LayoutContainer>
       <Menu />
-      <main>
+      <LayoutMain>
         <Outlet />
-      </main>
-      <CallToAction />
+      </LayoutMain>
+      {!isContactPage && <CallToAction />}
       <Footer />
-    </>
+      <ScrollRestoration />
+    </LayoutContainer>
   );
 };
 
@@ -36,7 +51,17 @@ const PublicRoutes = createBrowserRouter([
       },
       {
         path: "servicos",
-        Component: ServicesPage,
+        children: [
+          { index: true, Component: ServicesPage },
+          ...servicesRoutes.map((service) => {
+            const { link, component } = service;
+
+            return {
+              path: link.replace("/", ""),
+              Component: component,
+            };
+          }),
+        ],
       },
       {
         path: "contato",

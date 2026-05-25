@@ -26,7 +26,7 @@ export const ContactForm = () => {
             <SectionContentTexts>
               <Text
                 text={
-                  "Preencha o formulário ao lado e solicte seu orçamento sem comromisso."
+                  "Preencha o formulário ao lado e solicite seu orçamento sem compromisso."
                 }
               />
             </SectionContentTexts>

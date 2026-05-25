@@ -9,6 +9,7 @@ export const ContactFormStyled = styled.div`
   justify-content: center;
   background: white;
   padding: 7rem 0;
+  flex: 1;
 `
 
 export const ContactFormWrapper = styled(Wrapper)`

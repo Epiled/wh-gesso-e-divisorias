@@ -23,7 +23,7 @@ export const Service = (props: ServiceProp) => {
       <ServiceContent>
         <ServiceTitle>{title}</ServiceTitle>
         <ServiceText>{text} </ServiceText>
-        <ServiceLink href={link}>
+        <ServiceLink to={`/servicos/${link}`}>
           Saiba mais <ArrowIcon />
         </ServiceLink>
       </ServiceContent>

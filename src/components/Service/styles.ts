@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router';
 import styled from 'styled-components'; 
 
 export const ServiceStyled = styled.div`
@@ -38,7 +39,7 @@ export const ServiceText = styled.p`
   font-family: var(--montserrat);
 `
 
-export const ServiceLink = styled.a`
+export const ServiceLink = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 1.5rem;

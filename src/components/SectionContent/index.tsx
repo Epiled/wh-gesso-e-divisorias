@@ -60,7 +60,7 @@ export const SectionContent = (props: SectionContentProps) => {
 
               <Qualification>
                 <QualificationTitle>500+</QualificationTitle>
-                <QualificationText>Projetos Concluidos</QualificationText>
+                <QualificationText>Projetos Concluídos</QualificationText>
               </Qualification>
 
               <Qualification>

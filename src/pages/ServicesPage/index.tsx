@@ -1,8 +1,9 @@
 import { PageHeader } from "../../components/PageHeader";
+import { ServicesBlock } from "../../components/ServicesBlock";
+
+import { servicesRoutes } from "../../constants/servicesRoutes";
 
 import BackgroundImage from "assets/img/banner.png";
-import { ServicesBlock } from "../../components/ServicesBlock";
-import { servicesRoutes } from "../../constants/servicesRoutes";
 
 const ServicesPage = () => {
   return (

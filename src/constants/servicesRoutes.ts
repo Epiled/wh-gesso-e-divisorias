@@ -1,16 +1,18 @@
-import Image from "../assets/img/banner.png";
 import type { ServiceProp } from "../components/Service";
-// import DivisoriaEucatexPage from "../pages/ServicesPage/DivisoriaEucatexPage";
-// import DrywallPage from "../pages/ServicesPage/DrywallPage";
-// import ForroDePVCPage from "../pages/ServicesPage/ForroDePVCPage";
-// import ForroModularPage from "../pages/ServicesPage/ForroModularPage";
-// import ForrosDeGessoPage from "../pages/ServicesPage/ForrosDeGessoPage";
-// import ForrovidPage from "../pages/ServicesPage/ForrovidPage";
-// import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
-// import SancaPage from "../pages/ServicesPage/SancaPage";
+
+import DivisoriaEucatexPage from "../pages/ServicesPage/DivisoriaEucatexPage";
+import DrywallPage from "../pages/ServicesPage/DrywallPage";
+import ForroDePvcPage from "../pages/ServicesPage/ForroDePvcPage";
+import ForroModularPage from "../pages/ServicesPage/ForroModularPage";
+import ForroDeGessoPage from "../pages/ServicesPage/ForroDeGessoPage";
+import ForrovidPage from "../pages/ServicesPage/ForrovidPage";
+import LuminariasPage from "../pages/ServicesPage/LuminariasPage";
+import SancaPage from "../pages/ServicesPage/SancaPage";
+
+import Image from "../assets/img/banner.png";
 interface ServiceRoute {
   id: string;
-  // component: React.ComponentType;
+  component: React.ComponentType;
 }
 
 const services: (ServiceRoute & ServiceProp)[] = [
@@ -20,6 +22,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Acabamentos modernos em gesso que valorizam o ambiente com elegância e sofisticação.",
     image: Image,
     link: "/forro-de-gesso",
+    component: ForroDeGessoPage,
   },
   {
     id: "sanca",
@@ -27,6 +30,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Projetos de sancas abertas, fechadas e iluminadas para ambientes mais modernos.",
     image: Image,
     link: "/sanca",
+    component: SancaPage,
   },
   {
     id: "luminarias",
@@ -34,6 +38,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Estruturas em gesso para iluminação embutida com design moderno e funcional.",
     image: Image,
     link: "/luminarias",
+    component: LuminariasPage,
   },
   {
     id: "divisoriaEucatex",
@@ -41,6 +46,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Divisórias práticas e resistentes para organização de ambientes corporativos.",
     image: Image,
     link: "/divisoriaEucatex",
+    component: DivisoriaEucatexPage,
   },
   {
     id: "forrovid",
@@ -48,13 +54,15 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Forros removíveis ideais para ambientes comerciais que exigem praticidade.",
     image: Image,
     link: "/forrovid",
+    component: ForrovidPage,
   },
   {
-    id: "forroDePVC",
+    id: "forroDePvc",
     title: "Forro De PVC",
     text: "Soluções em PVC resistentes, econômicas e fáceis de manter no dia a dia.",
     image: Image,
     link: "/forroDePVC",
+    component: ForroDePvcPage,
   },
   {
     id: "forroModular",
@@ -62,6 +70,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Forros modulares com instalação prática e acabamento profissional.",
     image: Image,
     link: "/forroModular",
+    component: ForroModularPage,
   },
   {
     id: "drywall",
@@ -69,6 +78,7 @@ const services: (ServiceRoute & ServiceProp)[] = [
     text: "Paredes e estruturas em drywall com rapidez, leveza e excelente acabamento.",
     image: Image,
     link: "/drywall",
+    component: DrywallPage,
   },
 ];
 

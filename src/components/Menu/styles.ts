@@ -45,12 +45,20 @@ export const MenuItem = styled.li.attrs({ as: NavLink })`
   position: relative;
   text-decoration: none;
 
+  &:link {
+    color: white;
+  }
+
   &:visited {
     color: white;
   }
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:active {
+    color: white;
   }
 
   &:where([data-state="active"]) {
@@ -83,4 +91,8 @@ export const MenuButtonWhatsApp = styled(Button)`
   padding: 1.2rem;
   width: 6rem;
   height: 6rem;
+
+  &:hover {
+    background: #0a9e31;
+  }
 `

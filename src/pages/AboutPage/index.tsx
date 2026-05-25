@@ -21,8 +21,9 @@ const AboutPage = () => {
           decoration: "left",
         }}
         texts={[
-          "A Wellignton Henrique Gesos e Divisórias é referência em soluções de gesso e divisórias, atuando com compromisso, qualidade e atenção aos detalhes.",
-          "Transformamos ambientes com soluções modernas, funcionais e  personalizadas, sempre buscando superar expecctativas.",
+          "A WH Gesos e Divisórias nasceu com o propósito de entregar soluções completas em gesso e divisórias, unindo técnica, experiência e atendimento personalizado.",
+          "Ao longo dos anos, construímos uma trajetória sólida, marcada pela confiança dos nossos clientes e pelo cuidado em cada etapa do projeto.",
+          "Trabalhamos com materiais de qualidade, equipe especializada e foco em acabamentos que valorizam e transformam ambientes.",
         ]}
         image={BackgroundImage}
         qualifications={true}
