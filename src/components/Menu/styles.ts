@@ -86,11 +86,12 @@ export const MenuButton = styled(Button)`
   font-size: 1.8rem;
 `
 
-export const MenuButtonWhatsApp = styled(Button)`
+export const MenuButtonWhatsApp = styled(Button).attrs({ as: "a" })`
   background: #17E84D;
   padding: 1.2rem;
   width: 6rem;
   height: 6rem;
+  border-radius: .5rem;
 
   &:hover {
     background: #0a9e31;

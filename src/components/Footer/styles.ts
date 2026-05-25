@@ -81,10 +81,11 @@ export const FooterListServices = styled.ul`
 `
 
 export const FooterItem = styled.li.attrs({ as: NavLink})`
-  width: 100%;
+  color: white;
   font-size: 1.4rem;
   font-family: var(--nunita);
   text-decoration: none;
+  width: 100%;
 
   &:visited {
     color: white;
